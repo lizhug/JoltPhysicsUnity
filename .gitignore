@@ -14,3 +14,4 @@ zig-cache/
 *.a
 *.lib
 *.pdb
+.zig-cache/
