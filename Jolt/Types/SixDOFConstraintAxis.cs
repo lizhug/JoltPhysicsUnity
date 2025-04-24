@@ -8,5 +8,7 @@
         RotationX = 3,
         RotationY = 4,
         RotationZ = 5,
+        Num = 6,
+        NumTranslation = TranslationZ + 1,
     }
 }

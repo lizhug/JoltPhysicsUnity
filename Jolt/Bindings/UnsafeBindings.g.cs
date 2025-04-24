@@ -3063,7 +3063,7 @@ namespace Jolt
         public static extern void JPH_SixDOFConstraint_GetMotorSettings(JPH_SixDOFConstraint* constraint, JPH_MotorSettings* settings, [NativeTypeName("JPH_SixDOFConstraintAxis")] SixDOFConstraintAxis axis);
 
         [DllImport("joltc", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_SixDOFConstraint_SetMotorState(JPH_SixDOFConstraint* constraint, [NativeTypeName("JPH_MotorState")] MotorState state, [NativeTypeName("JPH_SixDOFConstraintAxis")] SixDOFConstraintAxis axis);
+        public static extern void JPH_SixDOFConstraint_SetMotorState(JPH_SixDOFConstraint* constraint, [NativeTypeName("JPH_SixDOFConstraintAxis")] SixDOFConstraintAxis axis, [NativeTypeName("JPH_MotorState")] MotorState state);
 
         [DllImport("joltc", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("JPH_MotorState")]

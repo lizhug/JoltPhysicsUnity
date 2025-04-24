@@ -4669,7 +4669,7 @@ void JPH_SixDOFConstraint_GetMotorSettings(JPH_SixDOFConstraint* constraint, JPH
 	joltSettings = ToJolt(settings);
 }
 
-void JPH_SixDOFConstraint_SetMotorState(JPH_SixDOFConstraint* constraint, JPH_MotorState state, JPH_SixDOFConstraintAxis axis)
+void JPH_SixDOFConstraint_SetMotorState(JPH_SixDOFConstraint* constraint, JPH_SixDOFConstraintAxis axis, JPH_MotorState state)
 {
 	AsSixDOFConstraint(constraint)->SetMotorState(static_cast<JPH::SixDOFConstraint::EAxis>(axis), static_cast<JPH::EMotorState>(state));
 }

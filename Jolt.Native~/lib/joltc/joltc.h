@@ -1635,7 +1635,7 @@ JPH_CAPI void JPH_SixDOFConstraint_SetMaxFriction(JPH_SixDOFConstraint* constrai
 JPH_CAPI float JPH_SixDOFConstraint_GetMaxFriction(JPH_SixDOFConstraint* constraint, JPH_SixDOFConstraintAxis axis);
 JPH_CAPI void JPH_SixDOFConstraint_GetRotationInConstraintSpace(JPH_SixDOFConstraint* constraint, JPH_Quat* result);
 JPH_CAPI void JPH_SixDOFConstraint_GetMotorSettings(JPH_SixDOFConstraint* constraint, JPH_MotorSettings* settings, JPH_SixDOFConstraintAxis axis);
-JPH_CAPI void JPH_SixDOFConstraint_SetMotorState(JPH_SixDOFConstraint* constraint, JPH_MotorState state, JPH_SixDOFConstraintAxis axis);
+JPH_CAPI void JPH_SixDOFConstraint_SetMotorState(JPH_SixDOFConstraint* constraint, JPH_SixDOFConstraintAxis axis, JPH_MotorState state);
 JPH_CAPI JPH_MotorState JPH_SixDOFConstraint_GetMotorState(JPH_SixDOFConstraint* constraint, JPH_SixDOFConstraintAxis axis);
 JPH_CAPI void JPH_SixDOFConstraint_SetTargetVelocityCS(JPH_SixDOFConstraint* constraint, JPH_Vec3 inVelocity);
 JPH_CAPI void JPH_SixDOFConstraint_GetTargetVelocityCS(JPH_SixDOFConstraint* constraint, JPH_Vec3* result);
