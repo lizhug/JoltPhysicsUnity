@@ -110,7 +110,7 @@ namespace Jolt
         {
             AssertInitialized();
 
-            UnsafeBindings.JPH_SixDOFConstraint_SetTargetPositionCS(constraint, position);
+            UnsafeBindings.JPH_SixDOFConstraint_SetTargetPositionCS(constraint, &position);
         }
 
         public static float3 JPH_SixDOFConstraint_GetTargetPositionCS(NativeHandle<JPH_SixDOFConstraint> constraint)
@@ -126,7 +126,7 @@ namespace Jolt
         {
             AssertInitialized();
 
-            UnsafeBindings.JPH_SixDOFConstraint_SetTargetOrientationCS(constraint, orientation);
+            UnsafeBindings.JPH_SixDOFConstraint_SetTargetOrientationCS(constraint, &orientation);
         }
 
         public static quaternion JPH_SixDOFConstraint_GetTargetOrientationCS(NativeHandle<JPH_SixDOFConstraint> constraint)

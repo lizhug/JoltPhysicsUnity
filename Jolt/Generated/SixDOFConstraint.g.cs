@@ -36,6 +36,17 @@ namespace Jolt
         public float3 GetTotalLambdaMotorTranslation() => Bindings.JPH_SixDOFConstraint_GetTotalLambdaMotorTranslation(Handle);
         
         public float3 GetTotalLambdaMotorRotation() => Bindings.JPH_SixDOFConstraint_GetTotalLambdaMotorRotation(Handle);
+
+        public void SetTargetPositionCS(float3 position) => Bindings.JPH_SixDOFConstraint_SetTargetPositionCS(Handle, &position);
+
+        public float3 GetTargetPositionCS() => Bindings.JPH_SixDOFConstraint_GetTargetPositionCS(Handle);
+
+        public void SetTargetOrientationCS(quaternion orientation) => Bindings.JPH_SixDOFConstraint_SetTargetOrientationCS(Handle, &orientation);
+
+        public quaternion GetTargetOrientationCS() => Bindings.JPH_SixDOFConstraint_GetTargetOrientationCS(Handle);
+
+        public void SetMotorState(SixDOFConstraintAxis axis, MotorState state) => Bindings.JPH_SixDOFConstraint_SetMotorState(Handle, axis, state);
+        public MotorState GetMotorState(SixDOFConstraintAxis axis) => Bindings.JPH_SixDOFConstraint_GetMotorState(Handle, axis);
         
         #endregion
         
@@ -94,16 +105,7 @@ namespace Jolt
         public bool SolvePositionConstraint(float deltaTime, float baumgarte) => Bindings.JPH_Constraint_SolvePositionConstraint(Handle.Reinterpret<JPH_Constraint>(), deltaTime, baumgarte);
         
         
-        public void SetTargetPositionCS(float3 position) => Bindings.JPH_SixDOFConstraint_SetTargetPositionCS(Handle, position);
-
-        public float3 GetTargetPositionCS() => Bindings.JPH_SixDOFConstraint_GetTargetPositionCS(Handle);
-
-        public void SetTargetOrientationCS(quaternion orientation) => Bindings.JPH_SixDOFConstraint_SetTargetOrientationCS(Handle, orientation);
-
-        public quaternion GetTargetOrientationCS() => Bindings.JPH_SixDOFConstraint_GetTargetOrientationCS(Handle);
-
-        public void SetMotorState(SixDOFConstraintAxis axis, MotorState state) => Bindings.JPH_SixDOFConstraint_SetMotorState(Handle, axis, state);
-        public MotorState GetMotorState(SixDOFConstraintAxis axis) => Bindings.JPH_SixDOFConstraint_GetMotorState(Handle, axis);
+        
 
 
         #endregion
