@@ -9,3 +9,8 @@ zig-cache/
 
 # JetBrains cache directory
 .idea/
+.vs/
+*.so
+*.a
+*.lib
+*.pdb

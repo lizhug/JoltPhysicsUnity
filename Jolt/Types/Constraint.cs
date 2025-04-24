@@ -29,5 +29,10 @@
         {
             return new Constraint { Handle = constraint.Handle.Reinterpret<JPH_Constraint>() };
         }
+
+        public static implicit operator Constraint(SixDOFConstraint constraint)
+        {
+            return new Constraint { Handle = constraint.Handle.Reinterpret<JPH_Constraint>() };
+        }
     }
 }
