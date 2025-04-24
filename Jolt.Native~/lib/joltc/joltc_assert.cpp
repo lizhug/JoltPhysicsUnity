@@ -43,6 +43,9 @@ __pragma(warning(pop))
     static_assert(sizeof(type0) == sizeof(type1)); \
     static_assert(alignof(type0) == alignof(type1))
 
+// Ensure that we use 32-bit object layers
+// static_assert(sizeof(JPH::ObjectLayer) == 4);
+
 static_assert(sizeof(JPH::ObjectLayer) == sizeof(JPH_ObjectLayer));
 static_assert(sizeof(JPH::BroadPhaseLayer) == sizeof(JPH_BroadPhaseLayer));
 static_assert(sizeof(JPH::BodyID) == sizeof(JPH_BodyID));
@@ -50,6 +53,10 @@ static_assert(sizeof(JPH::SubShapeID) == sizeof(JPH_SubShapeID));
 static_assert(sizeof(JPH::CharacterID) == sizeof(JPH_CharacterID));
 static_assert(sizeof(JPH::CollisionGroup::GroupID) == sizeof(JPH_CollisionGroupID));
 static_assert(sizeof(JPH::CollisionGroup::SubGroupID) == sizeof(JPH_CollisionSubGroupID));
+
+static_assert(JPH_INVALID_COLLISION_GROUP_ID == (int)JPH::CollisionGroup::cInvalidGroup);
+static_assert(JPH_INVALID_COLLISION_SUBGROUP_ID == (int)JPH::CollisionGroup::cInvalidSubGroup);
+
 
 // EPhysicsUpdateError
 static_assert(sizeof(JPH_PhysicsUpdateError) == sizeof(JPH::EPhysicsUpdateError));
