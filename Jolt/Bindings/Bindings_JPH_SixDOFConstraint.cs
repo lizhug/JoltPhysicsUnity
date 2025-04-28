@@ -72,5 +72,84 @@ namespace Jolt
             UnsafeBindings.JPH_SixDOFConstraint_GetTotalLambdaMotorRotation(constraint, &result);
             return result;
         }
+
+         public static void JPH_SixDOFConstraintSettings_MakeFixedAxis(ref SixDOFConstraintSettings settings, SixDOFConstraintAxis axis)
+        {
+            AssertInitialized();
+
+            fixed (SixDOFConstraintSettings* ptr = &settings)
+            {
+               UnsafeBindings.JPH_SixDOFConstraintSettings_MakeFixedAxis((JPH_SixDOFConstraintSettings*)ptr, axis);
+            }
+            
+        }
+
+        public static void JPH_SixDOFConstraintSettings_SetLimitedAxis(ref SixDOFConstraintSettings settings, SixDOFConstraintAxis axis, float min, float max)
+        {
+            AssertInitialized();
+
+            fixed (SixDOFConstraintSettings* ptr = &settings)
+            {
+                UnsafeBindings.JPH_SixDOFConstraintSettings_SetLimitedAxis((JPH_SixDOFConstraintSettings*)ptr, axis, min, max);
+            }
+
+        }
+
+        public static void JPH_SixDOFConstraintSettings_MakeFreeAxis(ref SixDOFConstraintSettings settings, SixDOFConstraintAxis axis)
+        {
+            AssertInitialized();
+
+            fixed (SixDOFConstraintSettings* ptr = &settings)
+            {
+                UnsafeBindings.JPH_SixDOFConstraintSettings_MakeFreeAxis((JPH_SixDOFConstraintSettings*)ptr, axis);
+            }
+
+        }
+
+        public static void JPH_SixDOFConstraint_SetTargetPositionCS(NativeHandle<JPH_SixDOFConstraint> constraint, float3 position)
+        {
+            AssertInitialized();
+
+            UnsafeBindings.JPH_SixDOFConstraint_SetTargetPositionCS(constraint, &position);
+        }
+
+        public static float3 JPH_SixDOFConstraint_GetTargetPositionCS(NativeHandle<JPH_SixDOFConstraint> constraint)
+        {
+            AssertInitialized();
+
+            float3 result;
+            UnsafeBindings.JPH_SixDOFConstraint_GetTargetPositionCS(constraint, &result);
+            return result;
+        }
+
+        public static void JPH_SixDOFConstraint_SetTargetOrientationCS(NativeHandle<JPH_SixDOFConstraint> constraint, quaternion orientation)
+        {
+            AssertInitialized();
+
+            UnsafeBindings.JPH_SixDOFConstraint_SetTargetOrientationCS(constraint, &orientation);
+        }
+
+        public static quaternion JPH_SixDOFConstraint_GetTargetOrientationCS(NativeHandle<JPH_SixDOFConstraint> constraint)
+        {
+            AssertInitialized();
+
+            quaternion result;
+            UnsafeBindings.JPH_SixDOFConstraint_GetTargetOrientationCS(constraint, &result);
+            return result;
+        }
+
+        public static void JPH_SixDOFConstraint_SetMotorState(NativeHandle<JPH_SixDOFConstraint> constraint, SixDOFConstraintAxis axis, MotorState state)
+        {
+            AssertInitialized();
+
+            UnsafeBindings.JPH_SixDOFConstraint_SetMotorState(constraint, axis, state);
+        }
+
+        public static MotorState JPH_SixDOFConstraint_GetMotorState(NativeHandle<JPH_SixDOFConstraint> constraint, SixDOFConstraintAxis axis)
+        {
+            AssertInitialized();
+
+            return UnsafeBindings.JPH_SixDOFConstraint_GetMotorState(constraint, axis);
+        }
     }
 }

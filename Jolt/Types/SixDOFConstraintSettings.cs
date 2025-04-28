@@ -81,6 +81,21 @@ namespace Jolt
         public SpringSettingsFixedBuffer LimitsSpringSettings;
 
         public MotorSettingsFixedBuffer MotorSettings;
+
+        public void MakeFixedAxis(SixDOFConstraintAxis axis)
+        {
+            JPH_SixDOFConstraintSettings_MakeFixedAxis(ref this, axis);
+        }
+
+        public void SetLimitedAxis(SixDOFConstraintAxis axis, float min, float max)
+        {
+            JPH_SixDOFConstraintSettings_SetLimitedAxis(ref this, axis, min, max);
+        }
+
+        public void MakeFreeAxis(SixDOFConstraintAxis axis)
+        {
+            JPH_SixDOFConstraintSettings_MakeFreeAxis(ref this, axis);
+        }
         
         /// <summary>
         /// Specialized fixed size buffer for SixDOFConstraintSettings LimitsSpringSettings.

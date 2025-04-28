@@ -1,4 +1,6 @@
-﻿const std = @import("std");
+﻿// zig version 0.11.0
+
+const std = @import("std");
 
 const Build = std.build;
 
